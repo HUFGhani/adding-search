@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
 	def new
 		@search - Search.new
+		@category = Book.uniq.pluck(:category)
 	end
 	def create
 		@search = Search.create(search_params)
